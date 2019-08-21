@@ -63,4 +63,9 @@ public class DepartmentController {
 		return departments;
 	}
 	
+	@GetMapping("/dept")
+	public String getFromDept() {
+		return "Return From DEPT::"+employeeClient.getStringFromEmployee();
+	}
+	
 }
