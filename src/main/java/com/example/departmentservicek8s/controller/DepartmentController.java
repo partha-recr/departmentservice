@@ -31,7 +31,7 @@ public class DepartmentController {
 		return employeeClient.findByDepartment(1);
 	}
 	
-	@PostMapping("/")
+	@PostMapping("/add")
 	public Department add(@RequestBody Department department) {
 		LOGGER.info("Department add: {}", department);
 		return repository.save(department);
@@ -43,7 +43,7 @@ public class DepartmentController {
 		return repository.findById(id).get();
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/all")
 	public Iterable<Department> findAll() {
 		LOGGER.info("Department find");
 		return repository.findAll();
@@ -62,7 +62,11 @@ public class DepartmentController {
 		departments.forEach(d -> d.setEmployees(employeeClient.findByDepartment(d.getId())));
 		return departments;
 	}
-	
+	@GetMapping("/")
+	public String health() {
+		LOGGER.info("Employee find");
+		return "Hello Home Page Dept";
+	}
 	@GetMapping("/dept")
 	public String getFromDept() {
 		return "Return From DEPT::"+employeeClient.getStringFromEmployee();
