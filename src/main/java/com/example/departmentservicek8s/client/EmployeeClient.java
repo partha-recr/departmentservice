@@ -14,7 +14,7 @@ public interface EmployeeClient {
 	@GetMapping("/department/{departmentId}")
 	List<Employee> findByDepartment(@PathVariable("departmentId") int departmentId);
 	
-	@GetMapping("/emp")
+	@GetMapping("/employee/emp")
 	public String getStringFromEmployee();
 	
 }

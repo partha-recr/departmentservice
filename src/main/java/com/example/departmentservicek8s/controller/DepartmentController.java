@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.departmentservicek8s.client.EmployeeClient;
@@ -17,6 +18,7 @@ import com.example.departmentservicek8s.model.Employee;
 import com.example.departmentservicek8s.repository.DepartmentRepository;
 
 @RestController
+@RequestMapping(value = "/department")
 public class DepartmentController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
