@@ -18,7 +18,7 @@ import com.example.departmentservicek8s.model.Employee;
 import com.example.departmentservicek8s.repository.DepartmentRepository;
 
 @RestController
-@RequestMapping(value = "/department")
+//@RequestMapping(value = "/department")
 public class DepartmentController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
@@ -39,11 +39,7 @@ public class DepartmentController {
 		return repository.save(department);
 	}
 	
-	@GetMapping("/{id}")
-	public Department findById(@PathVariable("id") int id) {
-		LOGGER.info("Department find: id={}", id);
-		return repository.findById(id).get();
-	}
+	
 	
 	@GetMapping("/all")
 	public Iterable<Department> findAll() {
