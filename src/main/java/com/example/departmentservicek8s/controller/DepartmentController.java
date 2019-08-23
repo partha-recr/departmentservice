@@ -18,7 +18,7 @@ import com.example.departmentservicek8s.model.Employee;
 import com.example.departmentservicek8s.repository.DepartmentRepository;
 
 @RestController
-@RequestMapping(value = "/department")
+//@RequestMapping(value = "/department")
 public class DepartmentController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
